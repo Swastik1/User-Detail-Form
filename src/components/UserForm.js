@@ -1,29 +1,30 @@
 import React, { Component } from "react";
 import FormUserDetails from "./FormUserDetails";
+import FormPersonalDetails from "./FormPersonalDetails";
 
 export class UserForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      step: 1,
-      firstName: "",
-      lastName: "",
-      email: "",
-      occupation: "",
-      bio: ""
-    };
-  }
+  state = {
+    step: 1,
+    firstName: "",
+    lastName: "",
+    email: "",
+    occupation: "",
+    bio: ""
+  };
+
   // Proceed to the next step
   nextStep = () => {
+    const { step } = this.state;
     this.setState({
-      step: this.state.step + 1
+      step: step + 1
     });
   };
 
   // Proceed to the previous step
   previousStep = () => {
+    const { step } = this.state;
     this.setState({
-      step: this.state.step - 1
+      step: step - 1
     });
   };
 
