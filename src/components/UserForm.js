@@ -14,7 +14,7 @@ export class UserForm extends Component {
   };
 
   // Proceed to the next step
-  nextStep = () => {
+  nextStep = () => {                     // this step doesn't work
     const { step } = this.state;
     this.setState({
       step: step + 1
