@@ -9,6 +9,7 @@ export class UserForm extends Component {
     lastName: "",
     email: "",
     occupation: "",
+    city: "",
     bio: ""
   };
 
@@ -34,8 +35,8 @@ export class UserForm extends Component {
   };
   render() {
     const { step } = this.state;
-    const { firstName, lastName, email, occupation, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, bio };
+    const { firstName, lastName, email, occupation, city, bio } = this.state;
+    const values = { firstName, lastName, email, occupation, city, bio };
 
     switch (step) {
       case 1:
@@ -47,7 +48,14 @@ export class UserForm extends Component {
           />
         );
       case 2:
-        return <h1>FormPersonalDetails</h1>;
+        return (
+          <FormPersonalDetails
+            nextStep={this.nextStep}
+            previousStep={this.previousStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
       case 3:
         return <h1>Confirm</h1>;
       case 4:
