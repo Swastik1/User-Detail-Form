@@ -50,7 +50,7 @@ export class FormUserDetails extends Component {
             label="Continue"
             primary={true}
             style={styles.button}
-            onChange={this.continue}
+            onClick={this.continue}
           />
         </React.Fragment>
       </MuiThemeProvider>
